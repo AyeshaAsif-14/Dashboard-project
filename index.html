@@ -3,144 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
+  <title>Velzon Admin Dashboard - SPS Task 3</title>
+  
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- FontAwesome Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <!-- Custom CSS file -->
+  <!-- Remix Icons (Velzon Style) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="d-flex" id="wrapper">
-    <!-- Sidebar Menu -->
-    <div class="bg-dark text-white p-3" id="sidebar">
-      <h4 class="text-center py-3 border-bottom"><i class="fa-solid fa-gauge me-2"></i>Dashboard</h4>
-      <ul class="nav nav-pills flex-column mt-3" id="sidebar-menu">
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link active text-white" data-target="#home-section">
-            <i class="fa-solid fa-house me-2"></i>Home
-          </a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link text-white" data-target="#analytics-section">
-            <i class="fa-solid fa-chart-line me-2"></i>Analytics
-          </a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link text-white" data-target="#users-section">
-            <i class="fa-solid fa-users me-2"></i>Users
-          </a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link text-white" data-target="#settings-section">
-            <i class="fa-solid fa-gear me-2"></i>Settings
-          </a>
-        </li>
-      </ul>
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="bg-dark border-end">
+      <div class="sidebar-heading text-white py-4 px-3 fs-4 fw-bold border-bottom d-flex align-items-center">
+        <i class="ri-dashboard-3-line text-primary me-2"></i> Velzon
+      </div>
+      <div class="list-group list-group-flush mt-3" id="sidebar-menu">
+        <a href="#" class="list-group-item list-group-item-action bg-dark text-white active" data-tab="home">
+          <i class="ri-home-4-line me-2"></i> Dashboard
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark text-white" data-tab="analytics">
+          <i class="ri-bar-chart-box-line me-2"></i> Analytics
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark text-white" data-tab="users">
+          <i class="ri-user-line me-2"></i> Users
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark text-white" data-tab="settings">
+          <i class="ri-settings-4-line me-2"></i> Settings
+        </a>
+      </div>
     </div>
 
-    <!-- Main Content Area -->
-    <div id="page-content-wrapper" class="w-100">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom px-4">
-        <button class="btn btn-outline-dark me-3" id="menu-toggle">
-          <i class="fa-solid fa-bars"></i>
+    <!-- Page Content -->
+    <div id="page-content-wrapper" class="w-100 bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom px-4 shadow-sm">
+        <button class="btn btn-outline-secondary btn-sm" id="menu-toggle">
+          <i class="ri-menu-fold-line fs-5"></i>
         </button>
-        <span class="navbar-brand mb-0 h1">Task 3: Interactive Dashboard</span>
+        <span class="navbar-brand ms-3 mb-0 h1 fs-5 fw-semibold text-secondary">SPS Task 3: Interactive Dashboard</span>
       </nav>
 
       <div class="container-fluid p-4">
         
-        <!-- 1. HOME SECTION -->
-        <div id="home-section" class="dashboard-section">
-          <!-- Summary Cards -->
+        <!-- Dashboard / Home Tab -->
+        <div id="home-view" class="tab-content-item">
+          <!-- Stat Cards -->
           <div class="row g-3 mb-4">
             <div class="col-md-3">
-              <div class="card bg-primary text-white p-3 shadow-sm">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h6>Total Users</h6>
-                    <h3>1,250</h3>
-                  </div>
-                  <i class="fa-solid fa-users fa-2x"></i>
+              <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body">
+                  <span class="text-muted text-uppercase fw-semibold fs-7">Total Users</span>
+                  <h3 class="fw-bold my-2 text-primary">2,540</h3>
+                  <small class="text-success"><i class="ri-arrow-up-line"></i> +12.5% this month</small>
                 </div>
               </div>
             </div>
             <div class="col-md-3">
-              <div class="card bg-success text-white p-3 shadow-sm">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h6>Revenue</h6>
-                    <h3>$15,400</h3>
-                  </div>
-                  <i class="fa-solid fa-dollar-sign fa-2x"></i>
+              <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body">
+                  <span class="text-muted text-uppercase fw-semibold fs-7">Total Earnings</span>
+                  <h3 class="fw-bold my-2 text-success">$24,500</h3>
+                  <small class="text-success"><i class="ri-arrow-up-line"></i> +8.2% vs last week</small>
                 </div>
               </div>
             </div>
             <div class="col-md-3">
-              <div class="card bg-warning text-white p-3 shadow-sm">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h6>New Orders</h6>
-                    <h3>320</h3>
-                  </div>
-                  <i class="fa-solid fa-shopping-cart fa-2x"></i>
+              <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body">
+                  <span class="text-muted text-uppercase fw-semibold fs-7">Orders</span>
+                  <h3 class="fw-bold my-2 text-warning">1,380</h3>
+                  <small class="text-danger"><i class="ri-arrow-down-line"></i> -2.4% today</small>
                 </div>
               </div>
             </div>
             <div class="col-md-3">
-              <div class="card bg-danger text-white p-3 shadow-sm">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h6>Pending Tasks</h6>
-                    <h3>18</h3>
-                  </div>
-                  <i class="fa-solid fa-tasks fa-2x"></i>
+              <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body">
+                  <span class="text-muted text-uppercase fw-semibold fs-7">Conversion Rate</span>
+                  <h3 class="fw-bold my-2 text-info">3.65%</h3>
+                  <small class="text-success"><i class="ri-arrow-up-line"></i> +1.1%</small>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Charts Area -->
-          <div class="row g-4">
-            <div class="col-lg-7">
-              <div class="card shadow-sm p-3">
-                <h5 class="card-title mb-3">Monthly Sales Trend</h5>
-                <canvas id="lineChart"></canvas>
+          <!-- Charts Row -->
+          <div class="row g-3">
+            <div class="col-lg-8">
+              <div class="card border-0 shadow-sm rounded-3 p-3">
+                <h6 class="fw-bold mb-3">Revenue & Sales Overview</h6>
+                <canvas id="salesChart" height="120"></canvas>
               </div>
             </div>
-            <div class="col-lg-5">
-              <div class="card shadow-sm p-3">
-                <h5 class="card-title mb-3">Traffic Source</h5>
-                <canvas id="doughnutChart"></canvas>
+            <div class="col-lg-4">
+              <div class="card border-0 shadow-sm rounded-3 p-3">
+                <h6 class="fw-bold mb-3">Traffic Sources</h6>
+                <canvas id="trafficChart" height="250"></canvas>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 2. ANALYTICS SECTION -->
-        <div id="analytics-section" class="dashboard-section d-none">
-          <div class="card p-4 shadow-sm">
-            <h3>Analytics Overview</h3>
-            <p>Welcome to Analytics page! Here you can monitor detailed traffic metrics.</p>
+        <!-- Analytics Tab -->
+        <div id="analytics-view" class="tab-content-item d-none">
+          <div class="card border-0 shadow-sm p-4">
+            <h5 class="fw-bold">Analytics Metrics</h5>
+            <p class="text-muted">Detailed view of user retention, daily active sessions, and bounce rate metrics.</p>
           </div>
         </div>
 
-        <!-- 3. USERS SECTION -->
-        <div id="users-section" class="dashboard-section d-none">
-          <div class="card p-4 shadow-sm">
-            <h3>User Management</h3>
-            <p>Welcome to Users page! Here you can add, remove, and update registered user profiles.</p>
+        <!-- Users Tab -->
+        <div id="users-view" class="tab-content-item d-none">
+          <div class="card border-0 shadow-sm p-4">
+            <h5 class="fw-bold mb-3">User Directory</h5>
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Joined</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ayesha Asif</td>
+                  <td>Administrator</td>
+                  <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                  <td>Sep 2026</td>
+                </tr>
+                <tr>
+                  <td>Rida Qureshi</td>
+                  <td>Instructor</td>
+                  <td><span class="badge bg-primary-subtle text-primary">Active</span></td>
+                  <td>Aug 2026</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- 4. SETTINGS SECTION -->
-        <div id="settings-section" class="dashboard-section d-none">
-          <div class="card p-4 shadow-sm">
-            <h3>Dashboard Settings</h3>
-            <p>Welcome to Settings page! Configure your dashboard preferences here.</p>
+        <!-- Settings Tab -->
+        <div id="settings-view" class="tab-content-item d-none">
+          <div class="card border-0 shadow-sm p-4">
+            <h5 class="fw-bold">Dashboard Preferences</h5>
+            <p class="text-muted">Manage system notifications, profile parameters, and display options.</p>
           </div>
         </div>
 
@@ -148,12 +157,13 @@
     </div>
   </div>
 
-  <!-- CDN Libraries -->
+  <!-- jQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- Custom Script -->
+  <!-- Custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
