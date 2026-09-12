@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar Menu -->
+    <div class="bg-dark text-white p-3" id="sidebar">
+      <h4 class="text-center py-3 border-bottom"><i class="fa-solid fa-gauge me-2"></i>Dashboard</h4>
+      <ul class="nav nav-pills flex-column mt-3" id="sidebar-menu">
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link active text-white" data-target="#home-section">
+            <i class="fa-solid fa-house me-2"></i>Home
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link text-white" data-target="#analytics-section">
+            <i class="fa-solid fa-chart-line me-2"></i>Analytics
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link text-white" data-target="#users-section">
+            <i class="fa-solid fa-users me-2"></i>Users
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link text-white" data-target="#settings-section">
+            <i class="fa-solid fa-gear me-2"></i>Settings
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div id="page-content-wrapper" class="w-100">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom px-4">
+        <button class="btn btn-outline-dark me-3" id="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="navbar-brand mb-0 h1">Task 3: Interactive Dashboard</span>
+      </nav>
+
+      <div class="container-fluid p-4">
+        
+        <!-- 1. HOME SECTION -->
+        <div id="home-section" class="dashboard-section">
+          <!-- Summary Cards -->
+          <div class="row g-3 mb-4">
+            <div class="col-md-3">
+              <div class="card bg-primary text-white p-3 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6>Total Users</h6>
+                    <h3>1,250</h3>
+                  </div>
+                  <i class="fa-solid fa-users fa-2x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card bg-success text-white p-3 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6>Revenue</h6>
+                    <h3>$15,400</h3>
+                  </div>
+                  <i class="fa-solid fa-dollar-sign fa-2x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card bg-warning text-white p-3 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6>New Orders</h6>
+                    <h3>320</h3>
+                  </div>
+                  <i class="fa-solid fa-shopping-cart fa-2x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card bg-danger text-white p-3 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6>Pending Tasks</h6>
+                    <h3>18</h3>
+                  </div>
+                  <i class="fa-solid fa-tasks fa-2x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Area -->
+          <div class="row g-4">
+            <div class="col-lg-7">
+              <div class="card shadow-sm p-3">
+                <h5 class="card-title mb-3">Monthly Sales Trend</h5>
+                <canvas id="lineChart"></canvas>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card shadow-sm p-3">
+                <h5 class="card-title mb-3">Traffic Source</h5>
+                <canvas id="doughnutChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. ANALYTICS SECTION -->
+        <div id="analytics-section" class="dashboard-section d-none">
+          <div class="card p-4 shadow-sm">
+            <h3>Analytics Overview</h3>
+            <p>Welcome to Analytics page! Here you can monitor detailed traffic metrics.</p>
+          </div>
+        </div>
+
+        <!-- 3. USERS SECTION -->
+        <div id="users-section" class="dashboard-section d-none">
+          <div class="card p-4 shadow-sm">
+            <h3>User Management</h3>
+            <p>Welcome to Users page! Here you can add, remove, and update registered user profiles.</p>
+          </div>
+        </div>
+
+        <!-- 4. SETTINGS SECTION -->
+        <div id="settings-section" class="dashboard-section d-none">
+          <div class="card p-4 shadow-sm">
+            <h3>Dashboard Settings</h3>
+            <p>Welcome to Settings page! Configure your dashboard preferences here.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CDN Libraries -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
